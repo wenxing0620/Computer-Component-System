@@ -1,0 +1,26 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug C++ Program",  // 调试配置名称（可自定义）
+            "type": "cppdbg",             // 调试器类型（C++专用）
+            "request": "launch",          // 启动调试会话
+            "program": "${workspaceFolder}/main.exe",  // 调试目标程序路径
+            "args": [],                    // 程序启动参数（若无留空）
+            "stopAtEntry": false,          // 是否在main()入口暂停
+            "cwd": "${workspaceFolder}",  // 工作目录（设为项目根目录）
+            "environment": [],
+            "externalConsole": true,      // 使用外部终端（方便输入输出）
+            "MIMode": "gdb",              // 调试器类型（与MinGW配套）
+            "miDebuggerPath": "C:/mingw64/bin/gdb.exe",  // 修改为你的gdb路径
+            "preLaunchTask": "Build C++ Project",  // 调试前自动执行编译任务
+            "setupCommands": [
+                {
+                    "description": "为 gdb 启用整齐打印",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        }
+    ]
+}
